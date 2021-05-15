@@ -14,6 +14,6 @@ Everytime, you make any changes or update the app to Firebase hosting.
 make sure you run this below line of code:
 npm ci && npm run build
 
-\*\*Front-end (client - build with reactjs): using Firebase hosting & cloud firestore service
+**Front-end (client - build with reactjs): using Firebase hosting & cloud firestore service**
 
-\*\*Back-end (server): Heroku
+**Back-end (server): Heroku**

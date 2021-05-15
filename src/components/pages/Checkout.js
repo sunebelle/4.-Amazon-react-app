@@ -20,6 +20,8 @@ const Checkout = () => {
   const [isCartShowed, setIsCartShowed] = useState(false);
   const history = useHistory();
 
+  console.log(user);
+
   const displayItem = basket.map((item) => {
     return <CartItem key={item.id} item={item} dispatch={dispatch} />;
   });
@@ -71,7 +73,7 @@ const Checkout = () => {
             <Button
               onClick={() => {
                 if (user) {
-                  history.push("/checkout/payment");
+                  history.push(`/checkout/${user.email}/payment`);
                 } else {
                   history.push("/signin");
                 }

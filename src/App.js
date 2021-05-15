@@ -12,6 +12,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import React from "react";
 import Orders from "./components/pages/Orders";
+import PrivateRoute from "./components/pages/PrivateRoute";
 //https://stripe.com/docs/stripe-js/react
 const promise = loadStripe(
   "pk_test_51IpVl7ISddT88IiKcyDnXAkMkNLhBMLkfJFClUln1gKnbY2F9AfwyygAs8ir6Xhq3uGGPXZLRUF9PhQl1VEJejxo003KEPL6C7"
@@ -51,19 +52,23 @@ const App = () => {
           <Checkout />
         </Layout>
       </Route>
-      {/* private route ..payment  /orders */}
-      <Route path="/checkout/payment"> 
+      <Route path="/checkout/:user/payment">
         <Layout>
-          <Elements stripe={promise}>
-            <Payment />
-          </Elements>
+          {user ? (
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          ) : (
+            <Home />
+          )}
         </Layout>
       </Route>
-      <Route path="/orders"> 
-        <Layout>
-            <Orders />
-        </Layout>
-      </Route>
+      <PrivateRoute
+        path="/orders"
+        exact
+        component1={Layout}
+        component2={Orders}
+      />
       <Route path="*">
         <Layout>
           <Home />
