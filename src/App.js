@@ -1,25 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./components/pages/Home";
+import { Switch, Route } from "react-router-dom";
+import ProductItem from "./components/pages/ProductItem";
+import Checkout from "./components/pages/Checkout";
+import Layout from "./components/layout/Layout";
+import { useCartContext } from "./useContext/CartContext";
+import Login from "./components/pages/Login";
+import Payment from "./components/pages/Payment";
+import { useEffect } from "react";
+import { auth } from "./firebase";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import React from "react";
+import Orders from "./components/pages/Orders";
+//https://stripe.com/docs/stripe-js/react
+const promise = loadStripe(
+  "pk_test_51IpVl7ISddT88IiKcyDnXAkMkNLhBMLkfJFClUln1gKnbY2F9AfwyygAs8ir6Xhq3uGGPXZLRUF9PhQl1VEJejxo003KEPL6C7"
+);
+const App = () => {
+  const [{ user }, dispatch] = useCartContext();
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      // console.log("the user is", userAuth);
+      if (userAuth) {
+        // User is signed in.
+        dispatch({ type: "ADD_USER", user: userAuth });
+      } else {
+        // No user is signed in.
+        dispatch({ type: "ADD_USER", user: null });
+      }
+    });
+  }, [user, dispatch]);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route path="/signin">
+        <Login />
+      </Route>
+      <Route path="/" exact>
+        <Layout>
+          <Home />
+        </Layout>
+      </Route>
+      <Route path="/products/:id">
+        <Layout>
+          <ProductItem />
+        </Layout>
+      </Route>
+      <Route path="/checkout" exact>
+        <Layout>
+          <Checkout />
+        </Layout>
+      </Route>
+      {/* private route ..payment  /orders */}
+      <Route path="/checkout/payment"> 
+        <Layout>
+          <Elements stripe={promise}>
+            <Payment />
+          </Elements>
+        </Layout>
+      </Route>
+      <Route path="/orders"> 
+        <Layout>
+            <Orders />
+        </Layout>
+      </Route>
+      <Route path="*">
+        <Layout>
+          <Home />
+        </Layout>
+      </Route>
+    </Switch>
   );
-}
+};
 
 export default App;

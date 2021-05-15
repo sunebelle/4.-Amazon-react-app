@@ -1,0 +1,17 @@
+.discover__home {
+  color: gray;
+  margin-top: 1%;
+}
+.discover__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 600px;
+}
+.discover__img {
+  padding: 2% 2% 2% 0;
+  width: auto;
+  height: 280px;
+  max-width: 270px;
+  vertical-align: middle;
+}

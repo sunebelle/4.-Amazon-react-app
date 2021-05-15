@@ -1,0 +1,56 @@
+.header {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.nav__global__location,
+.nav__account,
+.nav__cart,
+.nav__order {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__line1 {
+  font-size: 0.8rem;
+}
+.nav__line2 {
+  font-size: 1rem;
+}
+.nav__search {
+  width: 60%;
+  height: 40px;
+  margin: 0;
+  font-size: 1.2rem;
+  background-color: #f7a440;
+  border-radius: 5px;
+}
+.search__Input {
+  width: 95%;
+  height: 100%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.nav__search > input :focus {
+  /* border: 4px solid #f7a440 !important; */
+  /* border-radius: 5px; */
+  outline: none !important;
+  /* box-shadow: #f7a440; */
+}
+.search__icon {
+  color: black;
+  width: 5%;
+  padding: 4px !important;
+}
+.bump {
+  font-size: 2rem;
+}

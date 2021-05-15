@@ -1,0 +1,14 @@
+.product {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+.card__image {
+  height: 300px !important;
+}
+.star__color {
+  color: #e1701a;
+  font-size: 1rem !important;
+}
+.price {
+  font-size: 1.5rem;
+}

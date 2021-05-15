@@ -1,0 +1,7 @@
+.top__home {
+  background-color: #132c33;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin: 0;
+}

@@ -1,0 +1,17 @@
+.carousel__home {
+  margin-bottom: -380px;
+  /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+  color: black;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 1 !important;
+  color: black !important;
+  width: 4% !important;
+  top: -80% !important;
+}
