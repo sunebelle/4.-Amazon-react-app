@@ -17,27 +17,27 @@ const TopHome = () => {
             All
           </Link>
         </li>
-        <li className="list-inline-item pe-2">
+        <li className="list-inline-item pe-2 topHome__hidden ">
           <Link to="/" className="text-decoration-none text-white">
             Today's Deals
           </Link>
         </li>
-        <li className="list-inline-item">
+        <li className="list-inline-item topHome__hidden">
           <Link to="/" className="text-decoration-none text-white pe-2">
             Customer Service
           </Link>
         </li>
-        <li className="list-inline-item">
+        <li className="list-inline-item topHome__hidden">
           <Link to="/" className="text-decoration-none text-white pe-2">
             Gift Cards
           </Link>
         </li>
-        <li className="list-inline-item">
+        <li className="list-inline-item topHome__hidden">
           <Link to="/" className="text-decoration-none text-white pe-2">
             Registry
           </Link>
         </li>
-        <li className="list-inline-item">
+        <li className="list-inline-item topHome__hidden">
           <Link to="/" className="text-decoration-none text-white">
             Sell
           </Link>

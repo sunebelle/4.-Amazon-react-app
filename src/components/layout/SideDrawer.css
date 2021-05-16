@@ -1,0 +1,25 @@
+.side__drawer {
+  width: 40%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-out;
+}
+.open {
+  transform: translateY(0);
+}
+.sideDrawer__logo {
+  text-align: center;
+  justify-content: center;
+}
+.sideDrawer__logo > img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: -40px;
+  margin-top: -20px;
+}

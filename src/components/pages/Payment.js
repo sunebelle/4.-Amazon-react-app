@@ -51,17 +51,21 @@ const Payment = () => {
           },
         })
         .then((result) => {
-          if (result.error) {
-            setError(result.error.message);
+          const {
+            error,
+            paymentIntent: { id, amount, created },
+          } = result;
+          if (error) {
+            setError(error.message);
           } else {
             db.collection("users")
-              .doc(user?.uid)
+              .doc(user && user.uid)
               .collection("orders")
-              .doc(result.paymentIntent.id)
+              .doc(id)
               .set({
-                basket: basket,
-                amount: result.paymentIntent.amount,
-                created: result.paymentIntent.created,
+                basket,
+                amount,
+                created,
               });
             setSucceeded(true);
             setError(null);

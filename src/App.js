@@ -53,15 +53,15 @@ const App = () => {
         </Layout>
       </Route>
       <Route path="/checkout/:user/payment">
-        <Layout>
-          {user ? (
+        {user ? (
+          <Layout>
             <Elements stripe={promise}>
               <Payment />
             </Elements>
-          ) : (
-            <Home />
-          )}
-        </Layout>
+          </Layout>
+        ) : (
+          <Login />
+        )}
       </Route>
       <PrivateRoute
         path="/orders"

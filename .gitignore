@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-server
+
 # dependencies
 /node_modules
 /.pnp
@@ -11,7 +11,7 @@ notes
 /coverage
 
 # production
-/build
+build
 
 # misc
 .DS_Store

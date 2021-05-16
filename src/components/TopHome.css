@@ -5,3 +5,18 @@
   padding-top: 10px;
   margin: 0;
 }
+
+@media (max-width: 800px) {
+  .topHome__hidden {
+    display: none !important;
+  }
+}
+
+/* @media (max-width: 1120px) {
+  .nav__search {
+    width: 40%;
+  }
+  .search__Input {
+    width: 90%;
+  }
+} */

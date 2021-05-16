@@ -20,7 +20,7 @@ const Checkout = () => {
   const [isCartShowed, setIsCartShowed] = useState(false);
   const history = useHistory();
 
-  console.log(user);
+  // console.log(user);
 
   const displayItem = basket.map((item) => {
     return <CartItem key={item.id} item={item} dispatch={dispatch} />;

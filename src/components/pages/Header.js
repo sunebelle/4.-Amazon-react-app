@@ -7,8 +7,9 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../useContext/CartContext";
 import { auth } from "../../firebase";
+import MenuIcon from "@material-ui/icons/Menu";
 
-const Header = () => {
+const Header = ({ handleShow }) => {
   const [animation, setAnimation] = useState(false);
   const [{ basket, user }] = useCartContext();
 
@@ -34,12 +35,15 @@ const Header = () => {
   const animatedBasket = `nav__line1 ps-2 ${animation && "bum"}`;
   return (
     <header className="header container-fluid">
-      <div>
+      <div className="d-lg-none p-3 ps-0" onClick={handleShow}>
+        <MenuIcon />
+      </div>
+      <div className="d-none d-lg-block">
         <Link to="/" className="nav__logo">
           <img src={logo} alt="logo" />
         </Link>
       </div>
-      <div>
+      <div className="d-none d-lg-block">
         <Link
           to="/"
           className="nav__global__location text-decoration-none text-white"
@@ -54,11 +58,11 @@ const Header = () => {
           <SearchIcon />
         </span>
       </div>
-      <div className="nav__language">
+      <div className="nav__language d-none d-lg-block">
         <span className="nav__line1">EN</span>
         <ExpandMoreIcon />
       </div>
-      <div>
+      <div className="d-none d-lg-block">
         <Link
           // to={!user && "/signin"}
           to={!user ? "/signin" : "/"}
@@ -70,7 +74,7 @@ const Header = () => {
           <span className="nav__line2 font-weight-bold">Account & List</span>
         </Link>
       </div>
-      <div>
+      <div className="d-none d-lg-block">
         <Link
           to="/orders"
           className="nav__order text-decoration-none text-white"
@@ -79,7 +83,7 @@ const Header = () => {
           <span className="nav__line2 font-weight-bold">& Orders</span>
         </Link>
       </div>
-      <div>
+      <div className="">
         <Link
           to="/checkout"
           className="nav__cart text-decoration-none text-white "
