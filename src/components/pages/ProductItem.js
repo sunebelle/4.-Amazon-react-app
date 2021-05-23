@@ -44,54 +44,56 @@ const ProductItem = () => {
       <div key={id} className="container-fluid pt-4">
         <Container className="themed-container bg-white py-4" fluid={true}>
           <Row>
-            <Col sm="6" className=" text-center">
+            <Col md="6 d-flex align-item-center justify-content-center m-auto ">
               <div className="product__img">
-                <img className="w-50 h-100" src={img} alt={title} />
+                <img className="w-100 h-100" src={img} alt={title} />
               </div>
             </Col>
-            <Col sm="6">
-              <div className="top__product">
-                <div className="d-flex justify-content-between">
-                  <h3 className="m-0"> {title} </h3>
-                  <span>
-                    <FavoriteIcon className="me-1" />
-                    <ShareIcon />
-                  </span>
-                </div>
-                {Array(star)
-                  .fill()
-                  .map((_, i) => (
-                    <span className="star__color" key={Math.random() * 20}>
-                      <StarRateIcon />
+            <Col md="6 d-flex align-item-center justify-content-center m-auto">
+              <div className="d-flex flex-column product__card justify-content-center align-item-center  ">
+                <div className="top__product ">
+                  <div className="d-flex justify-content-between">
+                    <h3 className="m-0"> {title} </h3>
+                    <span>
+                      <FavoriteIcon className="me-1" />
+                      <ShareIcon />
                     </span>
-                  ))}
-              </div>
-              <div className="middle__product py-2">
-                <h2> {`$${price.toFixed(2)}`}</h2>
-              </div>
-              <div className="bottom__product ">
-                <p className="m-0"> Quantity</p>
-                <span>
-                  <button disabled={amount <= 1} onClick={handleMinus}>
-                    -
-                  </button>
-                  <span className="px-2">{amount}</span>
-                  <button onClick={handleAdd}>+</button>
-                </span>
-                <div>
-                  <ButtonToggle
-                    onClick={handleOrder}
-                    className="btn-lg w-50 my-4"
-                    color="danger"
-                  >
-                    Order
-                  </ButtonToggle>
+                  </div>
+                  {Array(star)
+                    .fill()
+                    .map((_, i) => (
+                      <span className="star__color" key={Math.random() * 20}>
+                        <StarRateIcon />
+                      </span>
+                    ))}
+                </div>
+                <div className="middle__product py-2">
+                  <h2> {`$${price.toFixed(2)}`}</h2>
+                </div>
+                <div className="bottom__product ">
+                  <p className="m-0"> Quantity</p>
+                  <span>
+                    <button disabled={amount <= 1} onClick={handleMinus}>
+                      -
+                    </button>
+                    <span className="px-2">{amount}</span>
+                    <button onClick={handleAdd}>+</button>
+                  </span>
+                  <div>
+                    <ButtonToggle
+                      onClick={handleOrder}
+                      className="btn-lg w-100 my-4"
+                      color="danger"
+                    >
+                      Order
+                    </ButtonToggle>
+                  </div>
                 </div>
               </div>
             </Col>
           </Row>
           <Row>
-            <h6 className="pt-4 "> {description}</h6>
+            <p className="pt-4 "> {description}</p>
           </Row>
         </Container>
         <TopBestSeller />

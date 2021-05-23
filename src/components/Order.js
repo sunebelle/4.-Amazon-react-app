@@ -37,7 +37,6 @@ const Order = ({ order, noOrder }) => {
       {itemOrders}
       <div className="footer__card text-right">
         <p className="font-weight-bold m-0">
-          {" "}
           Total Amount: {(amount / 100).toFixed(2)}
         </p>
       </div>

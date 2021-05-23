@@ -21,6 +21,7 @@ const Product = ({ title, id, img, star }) => {
           <CardImg
             top
             width="100%"
+            height="100%"
             className="card__image"
             src={img}
             alt={title}

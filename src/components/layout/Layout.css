@@ -1,9 +1,3 @@
-.app {
-  width: 100%;
-  box-sizing: border-box;
-}
 .main__home {
   min-height: 100vh;
-  margin-top: 60px;
-  position: relative;
 }

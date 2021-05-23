@@ -7,7 +7,6 @@ import {
   CardText,
   CardTitle,
   Col,
-  Container,
   Row,
   Button,
 } from "reactstrap";
@@ -36,7 +35,7 @@ const Checkout = () => {
 
   const emptyCart = (
     <Row>
-      <Col className="w-100 h-100 text-center d-flex justify-content-center align-item-center p-0">
+      <Col className="w-100 h-100 text-center d-flex justify-content-center align-item-center pt-5">
         <Card className="empty__cart">
           <CardBody className="">
             <h4> Please add something to your cart</h4>
@@ -47,11 +46,11 @@ const Checkout = () => {
   );
 
   const showCart = (
-    <Row>
+    <Row className="m-auto">
       <Col
         xs="12"
         md="8"
-        className=" bg-white d-flex flex-column me-4 pb-4 justify-content-center "
+        className=" bg-white d-flex flex-column me-4 pb-4 justify-content-center my-4 "
       >
         {displayItem}
       </Col>
@@ -89,10 +88,8 @@ const Checkout = () => {
   );
 
   return (
-    <div className=" container-fluid checkout_bg">
-      <Container className="themed-container mt-5 py-3" fluid={true}>
-        <div className="mt-5">{isCartShowed ? showCart : emptyCart}</div>
-      </Container>
+    <div className="checkout_bg container-fluid">
+      {isCartShowed ? showCart : emptyCart}
     </div>
   );
 };

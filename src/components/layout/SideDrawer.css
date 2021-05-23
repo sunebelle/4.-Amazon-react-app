@@ -1,5 +1,5 @@
 .side__drawer {
-  width: 40%;
+  width: 30%;
   position: fixed;
   z-index: 20;
   top: 0;
@@ -13,6 +13,7 @@
 .open {
   transform: translateY(0);
 }
+
 .sideDrawer__logo {
   text-align: center;
   justify-content: center;
@@ -23,3 +24,15 @@
   margin-bottom: -40px;
   margin-top: -20px;
 }
+.border__top {
+  box-shadow: 0 -10px 10px -5px grey;
+}
+.border__bottom {
+  box-shadow: 10px 10px 5px grey;
+}
+/* .side__drawer .nav__line1 {
+  font-size: 1rem;
+}
+.side__drawer .nav__line2 {
+  font-size: 1.2rem;
+} */

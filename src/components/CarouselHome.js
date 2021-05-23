@@ -53,7 +53,7 @@ const CarouselHome = () => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img className="carousel__img " src={item.src} alt={item.altText} />
       </CarouselItem>
     );
   });

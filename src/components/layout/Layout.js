@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="app">
+    <div className="w-100 h-100 d-flex flex-column justify-content-center">
       {isDrawerShown && <SideDrawer handleClose={handleClose} />}
       <Header handleShow={handleShow} />
       <main className="main__home">{children}</main>

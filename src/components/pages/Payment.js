@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "reactstrap";
 import { useCartContext } from "../../useContext/CartContext";
 import "./Payment.css";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -81,118 +80,110 @@ const Payment = () => {
 
   return (
     <div className="container-fluid payment__page">
-      <Container className="themed-container mt-5 py-3" fluid={true}>
-        <div className="payment__main">
-          <div className="payment__section">
-            <h4>Delivery Address</h4>
-            <p>{user && user.email}</p>
-            <p>Address: 123A Test Street, District 1, HCM City, VN </p>
-            <p> Time: Weekday && Working hours</p>
-          </div>
-          <div className="payment__section">
-            <h4> Delivery method</h4>
-            <div className="payment__checkbox">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  onChange={handleChange}
-                  value=""
-                  name="flexRadioDelivery"
-                  id="flexRadioDelivery1"
-                  checked
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor="flexRadioDelivery1"
-                >
-                  AmazonPremium
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  onChange={handleChange}
-                  value=""
-                  name="flexRadioDelivery"
-                  id="flexRadioDelivery2"
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor="flexRadioDelivery2"
-                >
-                  Express
-                </label>
-              </div>
+      <div className="payment__main">
+        <div className="payment__section">
+          <h4>Delivery Address</h4>
+          <p>{user && user.email}</p>
+          <p>Address: 123A Test Street, District 1, HCM City, VN </p>
+          <p> Time: Weekday && Working hours</p>
+        </div>
+        <div className="payment__section">
+          <h4> Delivery method</h4>
+          <div className="payment__checkbox">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                onChange={handleChange}
+                value=""
+                name="flexRadioDelivery"
+                id="flexRadioDelivery1"
+                checked
+              />
+              <label className="form-check-label" htmlFor="flexRadioDelivery1">
+                AmazonPremium
+              </label>
             </div>
-          </div>
-          <div className="payment__section">
-            <h4> Payment method</h4>
-            <div className="payment__checkbox">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  onChange={handleChange}
-                  value=""
-                  id="flexRadioPayment1"
-                  name="flexRadioPayment"
-                />
-                <label className="form-check-label" htmlFor="flexRadioPayment1">
-                  Cash on delivery
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  onChange={handleChange}
-                  value=""
-                  name="flexRadioPayment"
-                  id="flexRadioPayment2"
-                />
-                <label className="form-check-label" htmlFor="flexRadioPayment2">
-                  Internet banking
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  onChange={handleChange}
-                  value=""
-                  name="flexRadioPayment"
-                  id="flexRadioPayment3"
-                  checked
-                />
-                <label className="form-check-label" htmlFor="flexRadioPayment3">
-                  Credit / Debit Card
-                </label>
-                <div className="py-2 ">
-                  <CardElement onChange={handleCardChange} />
-                  {error && <p className="text-danger m-0">{error}</p>}
-                </div>
-              </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                onChange={handleChange}
+                value=""
+                name="flexRadioDelivery"
+                id="flexRadioDelivery2"
+              />
+              <label className="form-check-label" htmlFor="flexRadioDelivery2">
+                Express
+              </label>
             </div>
-          </div>
-          <div className=" py-4 text-center">
-            <form onSubmit={handleSubmit}>
-              {processing ? (
-                <div className="loader " />
-              ) : (
-                <button
-                  type="submit"
-                  disabled={processing || disabled || succeeded}
-                  className="btn btn-success btn-lg w-25 "
-                >
-                  Pay Now
-                </button>
-              )}
-            </form>
           </div>
         </div>
-      </Container>
+        <div className="payment__section">
+          <h4> Payment method</h4>
+          <div className="payment__checkbox">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                onChange={handleChange}
+                value=""
+                id="flexRadioPayment1"
+                name="flexRadioPayment"
+              />
+              <label className="form-check-label" htmlFor="flexRadioPayment1">
+                Cash on delivery
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                onChange={handleChange}
+                value=""
+                name="flexRadioPayment"
+                id="flexRadioPayment2"
+              />
+              <label className="form-check-label" htmlFor="flexRadioPayment2">
+                Internet banking
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                onChange={handleChange}
+                value=""
+                name="flexRadioPayment"
+                id="flexRadioPayment3"
+                checked
+              />
+              <label className="form-check-label" htmlFor="flexRadioPayment3">
+                Credit / Debit Card
+              </label>
+              <div className="py-2 ">
+                <CardElement onChange={handleCardChange} />
+                {error && <p className="text-danger m-0">{error}</p>}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" py-4 text-center">
+          <form onSubmit={handleSubmit}>
+            {processing ? (
+              <div className="loader " />
+            ) : (
+              <button
+                type="submit"
+                disabled={processing || disabled || succeeded}
+                className="btn btn-success btn-lg payment__btn"
+              >
+                Pay Now
+              </button>
+            )}
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

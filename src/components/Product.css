@@ -3,7 +3,8 @@
   margin-bottom: 20px;
 }
 .card__image {
-  height: 300px !important;
+  height: auto;
+  width: auto;
 }
 .star__color {
   color: #e1701a;

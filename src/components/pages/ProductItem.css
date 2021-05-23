@@ -1,3 +1,25 @@
 .top__product .MuiSvgIcon-root :hover {
   color: red;
 }
+.product__card {
+  border: 2px solid #fff;
+  padding: 20px;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.product__img > img {
+  border: 2px solid #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 900px) {
+  .product__card {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .product__card {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

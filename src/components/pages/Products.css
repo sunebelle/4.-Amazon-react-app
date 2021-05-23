@@ -1,0 +1,15 @@
+.products {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -370px;
+}
+@media (min-width: 600px) and (max-width: 1220px) {
+  .products {
+    margin-top: -420px;
+  }
+}
+@media (max-width: 600px) {
+  .products {
+    margin-top: -480px;
+  }
+}

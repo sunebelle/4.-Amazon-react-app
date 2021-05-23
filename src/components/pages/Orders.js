@@ -3,6 +3,7 @@ import "./Orders.css";
 import { db } from "../../firebase";
 import { useCartContext } from "../../useContext/CartContext";
 import Order from "../Order";
+import discountImg from "../../assets/discount.jpg"
 
 const Orders = () => {
   const [{ user }] = useCartContext();
@@ -33,15 +34,16 @@ const Orders = () => {
   // console.log(orders);
 
   return (
-    <div className="container-fluid">
-      <div className="py-1">
+    <div className="container-fluid order__main">
+      <div className="py-1 order__card text-center text-primary">
         {orders.length > 0 ? (
           <h1> Your orders</h1>
         ) : (
           <div className="empty__orders">
-            <h1 className="p-4 text-center">
+            <h3 className="p-4 text-center mb-5 h-100">
               Please checkout with discount today, it is awesome!
-            </h1>
+            </h3>
+            <img className="w-100 h-100" src={discountImg} alt="discount-img" />
           </div>
         )}
       </div>

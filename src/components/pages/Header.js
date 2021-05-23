@@ -34,7 +34,7 @@ const Header = ({ handleShow }) => {
   };
   const animatedBasket = `nav__line1 ps-2 ${animation && "bum"}`;
   return (
-    <header className="header container-fluid">
+    <header className="main__header container-fluid">
       <div className="d-lg-none p-3 ps-0" onClick={handleShow}>
         <MenuIcon />
       </div>
