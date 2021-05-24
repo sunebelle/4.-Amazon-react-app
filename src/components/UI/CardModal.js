@@ -4,7 +4,7 @@ import "./CardModal.css";
 const CardModal = ({ closeModalHandler, removeAProduct }) => {
   return (
     <div className="py-2 card__modal">
-      <h5>Are you sure, you want to delete this product</h5>
+      <h5>Are you sure, you want to delete this product?</h5>
       <button
         onClick={closeModalHandler}
         type="button"

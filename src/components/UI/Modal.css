@@ -10,11 +10,12 @@
 .modaling {
   /* position: fixed; */
   /* position: absolute; */
-  width: 50%;
+  width: 80%;
   margin: 10% auto;
   animation: slide-down 300ms ease-out forwards;
   text-align: center;
   height: 80%;
+  padding: 5%;
   background-color: white;
   z-index: 30;
 }

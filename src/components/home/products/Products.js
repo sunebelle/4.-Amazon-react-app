@@ -1,7 +1,7 @@
 import React from "react";
-import Product from "../Product";
+import Product from "./Product";
 import "./Products.css";
-import productsData from "../ProductData";
+import productsData from "./ProductData";
 import { Row } from "reactstrap";
 
 const Products = () => {

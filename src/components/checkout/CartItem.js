@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CardModal from "./UI/CardModal";
-import Modal from "./UI/Modal";
+import CardModal from "../UI/CardModal";
+import Modal from "../UI/Modal";
 
 const CartItem = ({ item, dispatch }) => {
   const [isModalOpened, setIsModalOpened] = useState(false);

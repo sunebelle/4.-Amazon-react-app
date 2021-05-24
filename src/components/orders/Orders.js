@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Orders.css";
 import { db } from "../../firebase";
 import { useCartContext } from "../../useContext/CartContext";
-import Order from "../Order";
-import discountImg from "../../assets/discount.jpg"
+import Order from "./Order";
+import discountImg from "../../assets/discount.jpg";
 
 const Orders = () => {
   const [{ user }] = useCartContext();

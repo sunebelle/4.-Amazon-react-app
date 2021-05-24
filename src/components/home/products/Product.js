@@ -14,7 +14,7 @@ import {
 
 const Product = ({ title, id, img, star }) => {
   return (
-    <Col xs="6" sm="4" lg="3" className="product">
+    <Col md="4" sm="6" lg="3" className="product">
       <Card>
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
@@ -22,7 +22,7 @@ const Product = ({ title, id, img, star }) => {
             top
             width="100%"
             height="100%"
-            className="card__image"
+            // className="card__image "
             src={img}
             alt={title}
           />

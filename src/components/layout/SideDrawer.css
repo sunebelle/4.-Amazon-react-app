@@ -4,7 +4,7 @@
   z-index: 20;
   top: 0;
   left: 0;
-  height: 100%;
+  max-height: 100vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -36,3 +36,30 @@
 .side__drawer .nav__line2 {
   font-size: 1.2rem;
 } */
+@media (max-width: 600px) {
+  .side__drawer {
+    width: 40%;
+  }
+  .sideDrawer__logo > img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .side__drawer {
+    width: 50%;
+  }
+  .sideDrawer__logo > img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+@media (max-width: 291px) {
+  .side__drawer {
+    width: 60%;
+  }
+  .sideDrawer__logo > img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}

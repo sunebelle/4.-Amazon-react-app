@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../pages/Header";
+import Header from "./Header";
 import "./Layout.css";
 import SideDrawer from "./SideDrawer";
 

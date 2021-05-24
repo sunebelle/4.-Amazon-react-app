@@ -2,16 +2,9 @@ import { Card } from "@material-ui/core";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
-import {
-  CardBody,
-  CardText,
-  CardTitle,
-  Col,
-  Row,
-  Button,
-} from "reactstrap";
+import { CardBody, CardText, CardTitle, Col, Row, Button } from "reactstrap";
 import { useCartContext } from "../../useContext/CartContext";
-import CartItem from "../CartItem";
+import CartItem from "./CartItem";
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -38,7 +31,7 @@ const Checkout = () => {
       <Col className="w-100 h-100 text-center d-flex justify-content-center align-item-center pt-5">
         <Card className="empty__cart">
           <CardBody className="">
-            <h4> Please add something to your cart</h4>
+            <h3> Please add something to your cart </h3>
           </CardBody>
         </Card>
       </Col>

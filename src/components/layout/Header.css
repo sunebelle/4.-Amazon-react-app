@@ -69,9 +69,18 @@
 
 @media (max-width: 400px) {
   .nav__search {
+    width: 60%;
+  }
+  .search__Input {
+    width: 80%;
+  }
+}
+@media (max-width: 291px) {
+  .nav__search {
     display: none;
   }
 }
+
 .nav__search > input :focus {
   /* border: 4px solid #f7a440 !important; */
   /* border-radius: 5px; */

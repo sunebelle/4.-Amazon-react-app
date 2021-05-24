@@ -1,18 +1,18 @@
-import Home from "./components/pages/Home";
+import Home from "./components/home/Home";
 import { Switch, Route } from "react-router-dom";
-import ProductItem from "./components/pages/ProductItem";
-import Checkout from "./components/pages/Checkout";
+import ProductItem from "./components/productItem/ProductItem";
+import Checkout from "./components/checkout/Checkout";
 import Layout from "./components/layout/Layout";
 import { useCartContext } from "./useContext/CartContext";
-import Login from "./components/pages/Login";
-import Payment from "./components/pages/Payment";
+import Login from "./components/login/Login";
+import Payment from "./components/payment/Payment";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import React from "react";
-import Orders from "./components/pages/Orders";
-import PrivateRoute from "./components/pages/PrivateRoute";
+import Orders from "./components/orders/Orders";
+import PrivateRoute from "./components/layout/PrivateRoute";
 //https://stripe.com/docs/stripe-js/react
 const promise = loadStripe(
   "pk_test_51IpVl7ISddT88IiKcyDnXAkMkNLhBMLkfJFClUln1gKnbY2F9AfwyygAs8ir6Xhq3uGGPXZLRUF9PhQl1VEJejxo003KEPL6C7"

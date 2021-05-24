@@ -7,6 +7,8 @@
   flex-direction: row;
   justify-content: space-between;
   max-height: 600px;
+  /* min-width: 100vh; */
+  overflow: auto;
 }
 .discover__img {
   padding: 2% 2% 2% 0;

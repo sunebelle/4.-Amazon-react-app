@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import { Col, Container, Row, ButtonToggle } from "reactstrap";
-import Products from "../ProductData";
-import DiscoverData from "../DiscoverData";
+import Products from "../home/products/ProductData";
+import DiscoverData from "../home/DiscoverData";
 import StarRateIcon from "@material-ui/icons/StarRate";
-import DiscoverHome from "../DiscoverHome";
-import TopBestSeller from "../TopBestSeller";
+import DiscoverHome from "../home/DiscoverHome";
+import TopBestSeller from "./TopBestSeller";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import "./ProductItem.css";
-import StarRating from "../StarRating";
+import StarRating from "./StarRating";
 import { useCartContext } from "../../useContext/CartContext";
 
 const ProductItem = () => {

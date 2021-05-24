@@ -1,10 +1,13 @@
 .product {
   max-width: 400px;
   margin-bottom: 20px;
+  max-height: 400px;
 }
 .card__image {
-  height: auto;
-  width: auto;
+  /* max-height: 310px;
+  max-width: 400px; */
+  max-width: 100%;
+  max-height: 100%;
 }
 .star__color {
   color: #e1701a;
